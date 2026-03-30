@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+.font-classic {
+    font-family: 'Instrument Serif';
+}
+
+.shadow-around {
+    box-shadow: 0 2px 16px rgba(26, 46, 35, 0.07);
+
+}
+
+.font-arial {
+    font-family: 'Arial';
+}
+
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #F2F5F3;
+}
