@@ -2,7 +2,7 @@
 import AccountActions from '@/features/settings/profile/components/AccountActions.vue';
 import DomainBranding from '@/features/settings/profile/components/DomainBranding.vue';
 import PersonalInfo from '@/features/settings/profile/components/PersonalInfo.vue';
-import SettingHeading from '@/components/SettingHeading.vue';
+import SettingHeading from '@/features/settings/components/SettingHeading.vue';
 
 </script>
 

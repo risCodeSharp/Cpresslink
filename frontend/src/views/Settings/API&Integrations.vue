@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-import SettingHeading from '@/components/SettingHeading.vue';
+import SettingHeading from '@/features/settings/components/SettingHeading.vue';
 </script>
 <template>
     <SettingHeading title="API & Integrations"

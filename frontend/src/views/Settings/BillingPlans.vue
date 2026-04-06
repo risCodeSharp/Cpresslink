@@ -2,7 +2,7 @@
 import CurrentPlan from '@/features/settings/billingPlan/components/CurrentPlan.vue';
 import Invoices from '@/features/settings/billingPlan/components/Invoices.vue';
 import Usage from '@/features/settings/billingPlan/components/Usage.vue';
-import SettingHeading from '@/components/SettingHeading.vue';
+import SettingHeading from '@/features/settings/components/SettingHeading.vue';
 </script>
 <template>
     <SettingHeading title="Billing & Plan"

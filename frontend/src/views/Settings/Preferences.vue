@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SettingHeading from '@/components/SettingHeading.vue';
+import SettingHeading from '@/features/settings/components/SettingHeading.vue';
 import Display from '@/features/settings/preferences/components/Display.vue';
 import EmailAlert from '@/features/settings/preferences/components/EmailAlert.vue';
 import LinkBehaviour from '@/features/settings/preferences/components/LinkBehaviour.vue';
