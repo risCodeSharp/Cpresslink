@@ -1,154 +1,163 @@
 # CPressLink
 
-**A full-stack link shortening web app UI** — built as a single self-contained HTML file with no external dependencies beyond Google Fonts.
+🔗 **Live Demo:** https://cpresslink.netlify.app/
+
+**A modern link shortening platform UI** — evolving into a full-stack system powered by **Vue + Axum (Rust)**.
 
 ---
 
 ## Overview
 
-CPressLink is a feature-complete front-end prototype for a URL shortening platform. It covers every screen a real product would need: a public landing page, an authenticated dashboard, a campaign analytics view with a link switcher, and a full account settings panel — all navigable from a single persistent top nav.
+CPressLink is a production-style URL shortening platform designed with a strong focus on **architecture, scalability, and UX clarity**.
+
+It began as a **single-file prototype**, and is now being refactored into a **modular Vue frontend**, with plans to integrate a high-performance backend using **Axum (Rust)**.
 
 ---
 
-## Pages
+## Tech Stack
 
-### Home (Landing)
-- Large serif hero headline with animated fade-in
-- Live URL shortener input — paste any URL and get a `cpress.link/xxxxx` slug instantly
-- Copy button appears on the result strip with a toast confirmation
-- Feature grid (6 cards): Instant Shortening, Deep Analytics, Smart Routing, Link Management, 99.98% Uptime, API Access
-- How It Works — 3-step flow with dashed connector line
-- Recent Links table with copy buttons on each row
-- CTA banner linking to Dashboard and Analytics
+### Frontend
 
-### Dashboard
-- **Loading skeleton** — animated shimmer placeholder shown for ~1.8s on every visit, matching the "Loading Dashboard…" state from the design references
-- **Architecture Lead Dashboard** layout with 3 stat cards: Total Clicks, Avg. CTR, Top Origin (matches image 4 from the reference set)
-- Shorten bar — paste a URL, generate a slug, copy it with one click
-- Network Traffic bar chart (Mon–Today)
-- Active Short Links table with destination preview, mini sparkline activity chart, click count, and per-row copy button
-- Pagination controls (Previous / 1 2 3 / Next)
-- **Architectural Pulse** dark bar — live system status showing Active Nodes, Structure Integrity, and Global Render Speed
+* Vue 3 + TypeScript
+* Vue Router
+* Feature-based architecture
+* SVG-based charts (custom)
 
-### Analytics
-- **Link Switcher sidebar** — lists all 7 links with name, slug, and click count; click any to switch the entire detail view
-- Search/filter input to find links by name or slug
-- ← → arrow buttons to step through links sequentially
-- Per-link detail pane:
-  - Status eyebrow + campaign title
-  - Short link and destination pills with copy/open buttons
-  - 3 stat cards: Total Clicks, Avg. CTR, Top Source
-  - Smooth cubic bezier line chart (30-day clicks over time) — redraws per link
-  - Top Referrers with animated progress bars
-  - Device Breakdown donut chart (Mobile / Desktop / Tablet)
-  - Geographical Reach with top 3 countries
+### Backend *(Planned)*
 
-### Settings
-- **Sidebar navigation** with 4 tabs — each switches content without a page reload:
-  - **Profile** — Full Name, Email, Username, Website, Bio; accent colour picker (5 swatches: Forest, Ocean, Ember, Violet, Slate) that updates the entire app's colour scheme live
-  - **Security** — Reset Password, Two-Factor Auth, API key management (Production + Test keys with Regenerate), Active Sessions list with Revoke buttons
-  - **Preferences** — 5 toggleable settings (Email Notifications, Daily Reports, Dark Mode, Link Expiry Alerts, Click Milestones); link defaults (slug length, expiry)
-  - **Billing** — Pro Plan card with dark gradient, usage bars (links, API requests, custom domains), invoice history with PDF download links
+* Rust
+* Axum (web framework)
+* REST / JSON APIs
+* Scalable service architecture
 
 ---
 
 ## Features
 
-| Feature | Detail |
-|---|---|
-| Copy to clipboard | Works on every link — landing result, dashboard result, table rows, analytics pills |
-| Toast notification | Slides up from bottom confirming every copy action |
-| Dashboard skeleton | Shimmer animation on every dashboard visit, transitions to real content |
-| Analytics link switcher | 7 links, each with unique chart shape, referrers, devices, and geo data |
-| Live chart rendering | SVG line chart redraws with smooth cubic bezier curves per link |
-| Donut chart | SVG stroke-dasharray donut updates per link's device split |
-| Accent colour theming | Settings → Profile → colour swatch updates `--accent` and `--dark` CSS variables globally |
-| Settings tabs | Profile / Security / Preferences / Billing — all wired up, no page reload |
-| Pagination UI | Dashboard links table has Previous / 1 2 3 / Next controls |
-| Sparklines | Mini SVG trend lines in the dashboard links table per row |
+### Core Functionality
+
+* URL shortening with instant slug generation
+* Copy-to-clipboard across the app
+* Toast notification system
+
+### Dashboard
+
+* Skeleton loading state
+* Stats overview (Clicks, CTR, Top Origin)
+* Traffic visualization
+* Active links table with sparklines
+
+### Analytics
+
+* Link switcher system
+* Dynamic charts (30-day trends)
+* Referrer tracking
+* Device breakdown (donut chart)
+* Geo analytics
+
+### Settings System
+
+* Profile management + live theme switching
+* Security (password, 2FA, API keys)
+* Preferences (notifications, defaults)
+* Billing UI (plans, usage, invoices)
 
 ---
 
-## Files
+## Project Structure
 
-```
-cpresslink-dashboard.html   Main app — all 4 pages in one file
-cpresslink-hero.html        Original standalone hero section (early prototype)
-README.md                   This file
+```bash
+frontend/
+└── src/
+    ├── assets/            # Global styles, fonts, images
+    ├── components/        # Reusable UI components
+
+    ├── features/          # Feature-based modules
+    │   ├── analytics/
+    │   ├── dashboard/
+    │   └── settings/
+
+    ├── views/             # Route-level pages
+    │   ├── Home.vue
+    │   ├── Dashboard.vue
+    │   ├── Analytics.vue
+    │   ├── SettingsLayout.vue
+    │   └── Settings/
+    │       ├── Profile.vue
+    │       ├── Security.vue
+    │       ├── Preferences.vue
+    │       ├── BillingPlans.vue
+    │       └── API&Integrations.vue
+
+    ├── router/            # Routing config
+    ├── stores/            # State management
+    ├── App.vue
+    ├── main.ts
+    ├── types.ts
+    └── env.d.ts
 ```
 
 ---
 
-## Design System
+## Architecture Approach
 
-| Token | Value |
-|---|---|
-| Background | `#f2f5f3` — soft sage white |
-| Card | `#ffffff` |
-| Dark / Primary | `#1a2e23` — deep forest green |
-| Accent | `#2d5a3d` — mid forest green |
-| Accent Light | `#e8f0ea` — pale green tint |
-| Muted | `#7a9085` |
-| Border | `rgba(45,90,61,0.10)` |
-| Border Radius | `12px` |
-| Shadow | `0 2px 16px rgba(26,46,35,0.07)` |
-| Display Font | Instrument Serif (Google Fonts) |
-| Body Font | DM Sans (Google Fonts) |
+* **Feature-first design** for scalability
+* **Separation of concerns** (views vs logic vs UI)
+* **Reusable components system**
+* **Extensible settings architecture**
+* Backend planned with **Axum for performance and safety**
+
+---
+
+## Roadmap
+
+### Phase 1 (Completed)
+
+* UI prototype (single HTML file)
+
+### Phase 2 (Current)
+
+* Vue modular frontend
+* Feature-based architecture
+
+### Phase 3 (Upcoming)
+
+* Axum backend integration
+* Real URL shortening service
+* Database integration
+* Authentication system
+
+### Phase 4 (Future)
+
+* Custom domains
+* Team workspaces
+* Advanced analytics
 
 ---
 
 ## How to Run
 
-No build step. No dependencies. Open `cpresslink-dashboard.html` directly in any modern browser.
-
 ```bash
-open cpresslink-dashboard.html
-# or just drag-drop into Chrome / Firefox / Safari
+npm install
+npm run dev
 ```
 
 ---
 
-## Reference Screenshots
+## Vision
 
-The UI was designed to match a series of reference screens from a "LinkArch" design system:
+CPressLink is being built as a **portfolio-grade system design project** that demonstrates:
 
-- **Image 1** — Architectural Dashboard with Network Traffic chart, Active Links table, and Pulse bar
-- **Image 2** — Loading/skeleton state with shimmer placeholders
-- **Image 3** — Settings / Account Architecture with Profile form and Preferences toggles
-- **Image 4** — Architecture Lead Dashboard with Total Clicks, Avg. CTR, and Top Origin stat cards
-- **Image 5** — Summer-Campaign-2024 analytics detail with line chart, referrers, device donut, and geo breakdown
+* Frontend architecture at scale
+* Backend performance using Rust
+* Real-world SaaS design patterns
 
 ---
 
-## Interaction Map
+## License
 
-```
-Home
- ├── "Start Shortening Free" → Dashboard
- ├── "View Analytics Demo →" → Analytics
- ├── URL input → shorten → copy
- ├── Recent links table → copy per row
- └── CTA banner → Dashboard / Analytics
-
-Dashboard
- ├── Loads with skeleton → fades to real content
- ├── Shorten bar → generate slug → copy
- ├── "Full Report →" → Analytics
- └── Links table → copy per row
-
-Analytics
- ├── Sidebar: click any link → switches all detail
- ├── Search input → filters sidebar list
- ├── ← → buttons → step through links
- └── Short link pill copy button → clipboard
-
-Settings
- ├── Profile tab → edit form + accent colour picker
- ├── Security tab → password, 2FA, API keys, sessions
- ├── Preferences tab → toggles + link defaults
- └── Billing tab → plan card, usage bars, invoices
-```
+MIT
 
 ---
 
-*© 2026 CPressLink. Built with Architectural Precision.*
+*© 2026 CPressLink — Built with Architectural Precision.*
