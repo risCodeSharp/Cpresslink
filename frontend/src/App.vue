@@ -9,12 +9,14 @@ import Header from '@/components/Header.vue';
 <template>
 
   <!-- Navbar -->
+  <div class="flex flex-col justify-between min-h-screen">
   <Header />
   <!-- main body -->
-   <main>
+   <main class="m-6 lg:w-6xl lg:mx-auto">
     <router-view />
   </main>
   <Footer />
+  </div>
   <!-- 
 
 <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-neutral-primary-soft border-t border-default shadow-sm md:flex md:items-center md:justify-between md:p-6">

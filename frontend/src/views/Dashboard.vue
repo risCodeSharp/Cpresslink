@@ -1,13 +1,15 @@
 <script lang="ts" setup>
+import {ref} from 'vue';
 import Card from '@/components/Card.vue';
 import InputField from '@/components/InputField.vue';
+import WeekTrafficBarChart from '@/components/WeekTrafficBarChart.vue';
 
 </script>
 <template>
-    <div class="m-6 lg:w-7xl lg:mx-auto">
-        <h1 class="my-6 text-4xl font-classic">Link Dashboard</h1>
+    
+        <h1 class="mb-6 text-4xl font-classic">Link Dashboard</h1>
 
-        <Card class="my-4">
+        <Card class="my-4 px-4 py-5">
             <h2 class="uppercase tracking-widest text-tiny ">
                 short a new link
             </h2>
@@ -23,32 +25,38 @@ import InputField from '@/components/InputField.vue';
             </div>
         </Card>
 
-        <div class="grid grid-cols-4 gap-4">
-            <Card>
+        <div class="grid grid-cols-4 gap-4 my-6">
+            <Card class="p-6">
                 <h3 class="text-tiny uppercase tracking-wider">Total Clicks</h3>
-                <p class="my-2 text-gray-700 text-3xl font-classic">12.4k</p>
+                <p class="my-2 text-gray-700 text-4xl font-classic">12.4k</p>
+            <WeekTrafficBarChart class="h-10" />
+
             </Card>
-            <Card>
+            <Card class="p-6">
                 <h3 class="text-tiny uppercase tracking-wider">Avg. Ctr</h3>
-                <p class="my-2 text-gray-700 text-3xl font-classic">4.82%k</p>
+                <p class="my-2 text-gray-700 text-4xl font-classic">4.82%</p>
             </Card>
-            <Card>
+            <Card class="p-6">
                 <h3 class="text-tiny uppercase tracking-wider">Active Links</h3>
-                <p class="my-2 text-gray-700 text-3xl font-classic">42</p>
+                <p class="my-2 text-gray-700 text-4xl font-classic">42</p>
             </Card>
-            <Card>
+            <Card class="p-6">
                 <h3 class="text-tiny uppercase tracking-wider">Node uptime</h3>
-                <p class="my-2 text-gray-700 text-3xl font-classic">99.98%</p>
+                <p class="my-2 text-gray-700 text-4xl font-classic">99.98%</p>
             </Card>
         </div>
-
-        <div>newtraffic barchart</div>
-        <div>
+        <div class="flex justify-around my-6 gap-6">
+        <Card class="shadow-around flex-4">newtraffic barchart</Card>
+        <Card class="shadow-around flex-3">
             top performers links lists
-        </div>
-
-        <div></div>
+        </Card>
     </div>
+    
+    <Card>
+        <h2 class="font-classic text-xl">All Links</h2>
+    </Card>
+        
+    
 </template>
 
 <style>

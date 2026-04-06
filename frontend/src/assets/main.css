@@ -18,3 +18,13 @@ body {
     font-family: 'DM Sans', sans-serif;
     background-color: #F2F5F3;
 }
+
+.text-medium-size {
+    font-size: 0.8rem;
+}
+.text-normal-size {
+    font-size: 0.74rem;
+}
+.text-small-size {
+    font-size: 0.68rem;
+}
