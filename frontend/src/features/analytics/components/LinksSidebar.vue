@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import Card from './Card.vue';
+import Card from '@//components/Card.vue';
 import { useDashboardStore } from '@/stores/dashboardStore';
 
 const value = ref("");

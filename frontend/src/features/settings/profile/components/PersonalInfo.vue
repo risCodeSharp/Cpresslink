@@ -33,7 +33,7 @@ const formatLabel = (key: string) => {
 
 <template>
 
-    <NCard class="rounded-card shadow-around my-6">
+    <NCard class="rounded-card shadow-around ">
         <template #header>
             <div class="flex text-normal-size justify-between items-center">
                 <div>

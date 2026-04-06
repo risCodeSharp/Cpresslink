@@ -1,35 +1,7 @@
 <script lang="ts" setup>
 import Switch from '@/components/Switch.vue';
-import { NCard, NSwitch } from 'naive-ui';
+import { NCard} from 'naive-ui';
 import { reactive } from 'vue';
-import type { CSSProperties } from 'vue'
-
-function railStyle({
-  focused,
-  checked
-}: {
-  focused: boolean
-  checked: boolean
-}): CSSProperties {
-  const style: CSSProperties = {
-    transition: 'all 0.2s ease-in-out', 
-    backgroundColor: checked ? '#00674F' : '#e5e7eb',
-  }
-
- if (focused) {
-  // This adds a subtle dark ring inside the rail
-  style.boxShadow = 'inset 0 0 0 2px rgba(0, 0, 0, 0.1)';
-  
-  // Optional: add a very slight outer glow that has 0 spread 
-  // but high blur to avoid the "border" look
-  style.boxShadow += checked 
-    ? ', 0 0 8px rgba(0, 103, 79, 0.3)' 
-    : ', 0 0 8px rgba(156, 163, 175, 0.3)';
-}
-
-  return style
-}
-
 
 const notificationSwitches = reactive([
     { title: 'Email Notifications', description: 'Critical system alerts and project updates', enabled: true },

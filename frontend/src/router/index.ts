@@ -1,13 +1,13 @@
-import Analytics from '@/views/Analytics.vue'
-import Dashboard from '@/views/Dashboard.vue'
-import Home from '@/views/Home.vue'
-import API_Integrations from '@/views/Settings/API_Integrations.vue'
-import Billing from '@/views/Settings/Billing.vue'
-import Preferences from '@/views/Settings/Preferences.vue'
-import Profile from '@/views/Settings/Profile.vue'
-import Security from '@/views/Settings/Security.vue'
-import SettingsLayout from '@/views/SettingsLayout.vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import Analytics from '@/views/Analytics.vue';
+import Dashboard from '@/views/Dashboard.vue';
+import Home from '@/views/Home.vue';
+import APIIntegrations from '@/views/Settings/API&Integrations.vue';
+import BillingPlans from '@/views/Settings/BillingPlans.vue';
+import Preferences from '@/views/Settings/Preferences.vue';
+import Profile from '@/views/Settings/Profile.vue';
+import Security from '@/views/Settings/Security.vue';
+import SettingsLayout from '@/views/SettingsLayout.vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,9 +36,9 @@ const router = createRouter({
         { path: '', name: 'invaild',redirect:  { name: 'Profile' } }, // default child
         { path: 'profile', name: 'Profile', component: Profile },
         { path: 'security', name: 'Security', component: Security },
-        { path: 'billing', name: 'Billing', component: Billing },
+        { path: 'billing', name: 'Billing', component: BillingPlans },
         { path: 'preferences', name: 'Preferences', component: Preferences },
-        { path: 'api_integrations', name: 'API_Integrations', component: API_Integrations }
+        { path: 'api_integrations', name: 'API_Integrations', component: APIIntegrations }
       ]
     },
   ],

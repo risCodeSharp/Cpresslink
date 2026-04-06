@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SettingSidebarTab from '@/components/SettingSidebarTab.vue';
+import SettingSidebarTab from '@/features/settings/components/SettingSidebarTab.vue';
 
 
 /*
@@ -24,7 +24,9 @@ const sidebarOptions = [
         <div class="w-75 h-600">
             <h2 class="py-2  text-slate-500 text-[0.67rem] uppercase tracking-widest ">Account Workspace</h2>
             <ul class="text-medium-size text-slate-500">
-                <li v-for="option in sidebarOptions"><SettingSidebarTab :icon="option.icon" :text="option.text" :to="option.to"/></li>
+                <li v-for="option in sidebarOptions">
+                    <SettingSidebarTab :icon="option.icon" :text="option.text" :to="option.to" />
+                </li>
             </ul>
         </div>
         <main class="py-2 h-600 mx-2 w-full">

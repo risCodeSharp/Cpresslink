@@ -44,8 +44,8 @@ onMounted(() => {
 
 </script>
 <template>
-    <header class="sticky top-0 z-50 bg-white text-gray-400 font-arial shadow-sm">
-        <nav class="flex w-full justify-between h-15 px-10 items-center">
+    <header class="sticky top-0 z-10 bg-white text-gray-400 font-arial shadow-sm">
+        <nav class="flex w-full justify-between h-12 px-10 items-center">
 
             <!-- <ul class="flex gap-7 text-sm items-center font-arial">
                 <ul class="font-classic text-xl text-green-900">CPress<em class="italic text-lime-700">Link</em></ul>
@@ -55,8 +55,10 @@ onMounted(() => {
                 <li>Settings</li>
             </ul> -->
             <div class="flex gap-7 text-sm items-center font-arial">
-                <ul class="font-classic text-xl text-green-900">CPress<em class="italic text-lime-700">Link</em></ul>
-                <li v-for="page in pages" class="flex items-center justify-center h-15 my-2"
+                <p class="font-classic text-xl text-emerald-950">
+                    CPress<em class="italic text-green-800">Link</em>
+                </p>
+                <li v-for="page in pages" class="text-medium-size tracking-wide font-light flex items-center justify-center h-12 my-2 p-0.5"
                     :class="{ 'text-black border-b-2 border-gray-900' : page.name === activePage}"">
                     <RouterLink :to="page.path" @click="updateActivePage(page.name)">{{ page.name }}</RouterLink></li>
             </div>
