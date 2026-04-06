@@ -156,7 +156,11 @@ CPressLink is being built as a **portfolio-grade system design project** that de
 
 ## License
 
-MIT
+This project is licensed under the **CPressLink Public License (CPPL) v1.0**.
+
+⚠️ AI/ML usage, dataset inclusion, and automated scraping are strictly prohibited.
+
+See the LICENSE file for full terms.
 
 ---
 
