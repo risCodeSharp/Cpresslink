@@ -23,10 +23,10 @@ const store = useDashboardStore();
                     class="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 "></span>Live Data</p>
             <h2 class="font-classic text-2xl">{{ store.selectedLink?.name }}</h2>
 
-            <LinkDetails />
-            <LinksAnalyticsRow />
-            <ClickOverTimeCard />
-            <div class="flex gap-4">
+            <LinkDetails class="mb-t"/>
+            <LinksAnalyticsRow class="mt-6"/>
+            <ClickOverTimeCard class="mt-6"/>
+            <div class="flex gap-4 mt-6">
                 <Card class="w-full">
                     Top Reffers
                 </Card>

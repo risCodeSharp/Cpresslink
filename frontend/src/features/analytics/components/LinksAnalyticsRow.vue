@@ -4,7 +4,7 @@ import Card from '@/components/Card.vue';
 </script>
 
 <template>
-    <div class=" w-full flex gap-4 py-6">
+    <div class=" w-full flex gap-4 ">
         <Card class="w-full py-4 px-6 flex flex-col justify-around gap-0.5 max-h-full">
             <h4 class="text-slate-400 uppercase text-small-size tracking-wider">Total Clicks</h4>
             <p class="text-gray-800 font-classic text-[1.7rem] ">3,241</p>

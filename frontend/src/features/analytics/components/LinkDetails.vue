@@ -1,5 +1,5 @@
 <template>
-    <div class="flex gap-3 flex-wrap mt-6 mb-2">
+    <div class="flex gap-3 flex-wrap">
 
         <p
             class=" px-3 py-1 flex items-center text-[0.81rem] bg-white shadow-around min-w-0  flex-wrap text-nowrap rounded-lg text-gray-500 font-light">

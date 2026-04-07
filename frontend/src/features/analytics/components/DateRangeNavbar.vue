@@ -20,7 +20,6 @@ const ranges: RangeMap =
 
 function isRangeSelected(range: DateRange): boolean {
     const v =  store.dateRange === range;
-    console.log(range, v)
     return v;
 }
 
