@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, ref, type Ref } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
-
+import logo from '@/assets/logo_transparent.png';
 type PageName = "Home" | "Dashboard" | "Analytics" | "Settings";
 
 interface Page {
@@ -55,9 +55,7 @@ onMounted(() => {
                 <li>Settings</li>
             </ul> -->
             <div class="flex gap-7 text-sm items-center font-arial">
-                <p class="font-classic text-xl text-emerald-950">
-                    CPress<em class="italic text-green-800">Link</em>
-                </p>
+                <RouterLink to="/"><img  class="h-auto w-30" :src="logo" alt="CPressLink"></RouterLink>
                 <li v-for="page in pages" class="text-medium-size tracking-wide font-light flex items-center justify-center h-12 my-2 p-0.5"
                     :class="{ 'text-black border-b-2 border-gray-900' : page.name === activePage}"">
                     <RouterLink :to="page.path" @click="updateActivePage(page.name)">{{ page.name }}</RouterLink></li>
