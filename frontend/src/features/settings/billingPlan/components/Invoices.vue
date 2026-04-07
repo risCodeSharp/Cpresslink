@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import Usagebar from '@/components/Usagebar.vue';
 import { NCard, NSpace} from 'naive-ui';
 import type { DataTableColumns } from 'naive-ui'
 import { NButton, NTag, useMessage } from 'naive-ui'
