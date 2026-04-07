@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Card from '@/components/Card.vue';
+import { NCard } from "naive-ui";
 import { Chart as ChartJS, Title, Tooltip, LineElement, CategoryScale, LinearScale, PointElement, Filler, type ChartOptions, type ChartData } from "chart.js";
 import { onMounted, ref, type Ref } from 'vue';
 import { Line } from 'vue-chartjs';
@@ -84,9 +84,9 @@ onMounted(() => {
 
 </script>
 <template>
-    <Card>
+    <NCard class="rounded-card shadow-around">
         <div>
-            <div class="mb-6 flex justify-between rounded-lg p-5">
+            <div class="mb-6 flex justify-between rounded-lg">
                 <div>
                     <p class="text-[0.88rem] text-gray-800 font-semibold">Clicks Over Time</p>
                     <p class="text-[0.78rem]">Performance metrics for the last 30 days</p>
@@ -100,5 +100,5 @@ onMounted(() => {
                 <Line class="max-h-50 w-5/6" :data="chartData" :options="chartOptions" />
             </div>
         </div>
-    </Card>
+    </NCard>
 </template>

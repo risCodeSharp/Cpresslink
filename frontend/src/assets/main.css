@@ -28,3 +28,7 @@ body {
 .text-small-size {
     font-size: 0.68rem;
 }
+
+.rounded-card {
+    border-radius: 12px;
+}

@@ -39,14 +39,6 @@ interface UsageRowData {
     </NSpace> -->
 
 </template>
-
-
-<style lang="css" scoped>
-.rounded-card {
-    border-radius: 12px;
-}
-</style>
-
 <!-- 
 later <script lang="ts" setup>
 import { NCard, NSpace, NDataTable, NTag, NButton } from 'naive-ui'

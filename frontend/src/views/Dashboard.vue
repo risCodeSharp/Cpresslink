@@ -3,6 +3,7 @@ import {ref} from 'vue';
 import Card from '@/components/Card.vue';
 import InputField from '@/components/InputField.vue';
 import WeekTrafficBarChart from '@/components/WeekTrafficBarChart.vue';
+import { NCard } from 'naive-ui';
 
 </script>
 <template>
@@ -32,10 +33,10 @@ import WeekTrafficBarChart from '@/components/WeekTrafficBarChart.vue';
             <WeekTrafficBarChart class="h-10" />
 
             </Card>
-            <Card class="p-6">
-                <h3 class="text-tiny uppercase tracking-wider">Avg. Ctr</h3>
-                <p class="my-2 text-gray-700 text-4xl font-classic">4.82%</p>
-            </Card>
+            <NCard class="shadow-around rounded-card circle-green" style="background: var(--color-emerald-900); color: white">
+                <h3 class="text-tiny text-white/70 uppercase tracking-wider">Avg. Ctr</h3>
+                <p class="my-2  text-4xl font-classic">4.82%</p>
+            </NCard>
             <Card class="p-6">
                 <h3 class="text-tiny uppercase tracking-wider">Active Links</h3>
                 <p class="my-2 text-gray-700 text-4xl font-classic">42</p>
@@ -63,4 +64,5 @@ import WeekTrafficBarChart from '@/components/WeekTrafficBarChart.vue';
 .text-tiny {
     font-size: 0.72rem;
 }
+
 </style>

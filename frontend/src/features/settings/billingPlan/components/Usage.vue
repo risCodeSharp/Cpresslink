@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Usagebar from '@/components/Usagebar.vue';
+import Usagebar from './Usagebar.vue';
 import { NCard} from 'naive-ui';
 import { reactive, type Reactive } from 'vue';
 
