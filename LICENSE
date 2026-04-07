@@ -1,0 +1,81 @@
+CPressLink Public License (CPPL) v1.0
+Copyright (c) 2026 CPressLink
+
+---
+
+## 1. Permission
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to:
+
+* Use, copy, modify, and distribute the Software
+* Create derivative works
+* Use the Software for personal or commercial projects
+
+Subject to the conditions below.
+
+---
+
+## 2. Restrictions on AI / Machine Learning Use
+
+The Software and any substantial portion of it may NOT be used, directly or indirectly, for:
+
+* Training, fine-tuning, or evaluating any artificial intelligence or machine learning models
+* Inclusion in datasets used for AI/ML systems
+* Data scraping, crawling, or extraction for the purpose of building or improving AI systems
+* Use in large language models (LLMs), generative AI, or similar technologies
+* Any automated system designed to learn from or replicate the Software’s structure, design, or functionality
+
+This restriction applies to both commercial and non-commercial use.
+
+---
+
+## 3. Data Extraction & Scraping Restriction
+
+Automated extraction, scraping, or harvesting of the Software or its contents for the purpose of:
+
+* Dataset creation
+* Content aggregation
+* Competitive replication using automated systems
+
+is strictly prohibited without explicit written permission from the author.
+
+---
+
+## 4. Attribution
+
+The above copyright notice and this license must be included in all copies
+or substantial portions of the Software.
+
+---
+
+## 5. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+---
+
+## 6. Liability
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+## 7. Acceptance
+
+By using, copying, modifying, or distributing this Software, you agree to be bound by the terms of this License.
+
+---
+
+## 8. Contact
+
+For permissions outside the scope of this license, contact the author.
+
+---
+
+*This license is a custom license and is not an OSI-approved open source license.*
