@@ -2,8 +2,8 @@
 import {ref} from 'vue';
 import Card from '@/components/Card.vue';
 import InputField from '@/components/InputField.vue';
-import WeekTrafficBarChart from '@/components/WeekTrafficBarChart.vue';
-import { NCard } from 'naive-ui';
+
+import ClicksDetailsRow from '@/features/dashboard/components/ClicksDetailsRow.vue';
 
 </script>
 <template>
@@ -26,32 +26,7 @@ import { NCard } from 'naive-ui';
             </div>
         </Card>
 
-        <div class="grid grid-cols-4 gap-4 my-6">
-            <Card class="p-6">
-                <h3 class="text-tiny uppercase tracking-wider">Total Clicks</h3>
-                <p class="my-2 text-gray-700 text-4xl font-classic">12.4k</p>
-            <WeekTrafficBarChart class="h-10" />
-
-            </Card>
-            <NCard class="shadow-around rounded-card circle-green" style="background: var(--color-emerald-900); color: white">
-                <h3 class="text-tiny text-white/70 uppercase tracking-wider">Avg. Ctr</h3>
-                <p class="my-2  text-4xl font-classic">4.82%</p>
-            </NCard>
-            <Card class="p-6">
-                <h3 class="text-tiny uppercase tracking-wider">Active Links</h3>
-                <p class="my-2 text-gray-700 text-4xl font-classic">42</p>
-            </Card>
-            <Card class="p-6">
-                <h3 class="text-tiny uppercase tracking-wider">Node uptime</h3>
-                <p class="my-2 text-gray-700 text-4xl font-classic">99.98%</p>
-            </Card>
-        </div>
-        <div class="flex justify-around my-6 gap-6">
-        <Card class="shadow-around flex-4">newtraffic barchart</Card>
-        <Card class="shadow-around flex-3">
-            top performers links lists
-        </Card>
-    </div>
+        <ClicksDetailsRow />
     
     <Card>
         <h2 class="font-classic text-xl">All Links</h2>

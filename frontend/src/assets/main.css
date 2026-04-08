@@ -32,3 +32,7 @@ body {
 .rounded-card {
     border-radius: 12px;
 }
+
+.dark-green-card {
+    background: linear-gradient(to bottom, var(--color-emerald-950) 0%, var(--color-emerald-700) 100%);
+}

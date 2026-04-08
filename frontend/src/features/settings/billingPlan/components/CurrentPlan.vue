@@ -3,8 +3,8 @@ import { NCard } from 'naive-ui';
 </script>
 
 <template>
-    <NCard class="rounded-card shadow-around my-6 "
-        style="background: linear-gradient(90deg, #1C352D, #06502E); border-radius: 1rem;">
+    <NCard class="rounded-card shadow-around my-6 dark-green-card"
+        >
         <!-- Refactor remove flex later -->
         <div class="uppercase tracking-widest text-[0.6rem]  text-white/50 ">Current Plan</div>
         <div class="text-white/80 flex text-normal-size justify-between items-center">

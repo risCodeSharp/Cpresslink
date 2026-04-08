@@ -4,7 +4,7 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 import { ref, computed, type ComputedRef } from 'vue';
 import type { ChartData, ChartOptions, ScriptableContext } from 'chart.js';
 
-const mostBarColor = '#5E9467';
+const mostBarColor = '#2e8b57';
 const normalBarColor = '#C7E3CC';
 
 const totalclickPast5Months: number[] = [100, 200, 500, 300, 40];
@@ -22,8 +22,10 @@ const chartData = ref<ChartData<'bar', number[], string>>({
     data: totalclickPast5Months,
     barThickness: 'flex',
     backgroundColor: barBackgroundColor.value,
-    borderRadius: 4,
+    borderRadius: 2.5,
+    barPercentage: 1.15,
     borderColor: '#9CCAA7',
+    borderWidth: 1.1,
     borderSkipped: false,
   }],
 });

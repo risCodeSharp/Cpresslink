@@ -51,15 +51,15 @@ import WorkingStepSection from '@/components/WorkingStepSection.vue';
     <FeatureSection />
     <WorkingStepSection />
     <section class="mx-10 xxl:mx-90 xl:w-270 xl:mx-auto lg:mx-35 md:mx-10">
-      <div class="w-full mx-auto m-10 px-7 py-10 rounded-xl bg-emerald-800 flex justify-between items-center gap-7 ">
+      <div class="w-full mx-auto m-10 px-7 py-10 rounded-xl dark-green-card flex justify-between items-center gap-7 ">
         <div class="w-full">
           <h3 class="font-classic text-3xl text-white mb-2">Ready to take control of your links?</h3>
           <p class="text-sm text-green-100"> Join thousands of teams using CPressLink to track, optimise, and scale
             their URL strategy.</p>
         </div>
-        <div class="flex justify-end gap-2 text-white font-lg text-sm w-120 mx-auto">
-          <button class="rounded-md bg-green-600/70 px-4 py-2 ">Go to Dashboard → </button>
-          <button class="rounded-md outline-1 outline-gray-600  bg-lime-600/40 px-4 py-2"> View Analytics</button>
+        <div class="flex justify-end gap-4 text-white font-lg text-sm w-120 mx-auto">
+          <RouterLink to="/dashboard" class="cursor-pointer text-sm outline-gray-400 transition hover:-translate-y-1 hover:scale-107 hover:outline rounded-md  px-4 py-2 " style=" background: linear-gradient(to bottom, var(--color-teal-800) 0%, var(--color-green-700) 100%);">Go to Dashboard → </RouterLink>
+          <RouterLink to="/analytics" class="cursor-pointer text-sm outline-gray-400 transition hover:-translate-y-1 hover:scale-107 hover:outline rounded-md  px-4 py-2" style=" background: linear-gradient(to bottom, #00703c 0%, #568203  100%);"> View Analytics</RouterLink>
         </div>
       </div>
     </section>
