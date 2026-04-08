@@ -76,6 +76,13 @@ const links: Ref<LinkPerformance[]> = ref(
     ]
 );
 
+async function copyText(text: string) {
+    try {
+        await navigator.clipboard.writeText(text);
+    } catch (err: any) {
+        console.error("Failed to copy text!")
+    }
+}
 
 
 </script>
@@ -91,7 +98,7 @@ const links: Ref<LinkPerformance[]> = ref(
             </div>
         </template>
         <NScrollbar x-scrollable style="max-height: 200px; ">
-        <div class="w-full max-w-2xl mx-auto min-w-70">
+        <div class="w-full max-w-2xl mx-auto ">
             <table class="w-full border-collapse text-[0.68rem]">
                 <thead>
                     <tr class="text-gray-600/75 tracking-wider">
@@ -113,7 +120,7 @@ const links: Ref<LinkPerformance[]> = ref(
                         <td class="py-2 px-2 text-lg text-end font-classic">{{ link.clicks }}</td>
                         <td class="py-2 px-2 text-right text-sm">{{ link.ctr }}%</td>
                         <td class="py-2 pl-1">
-                            <button class=" transition-colors duration-200 ease-in-out cursor-pointer text-green-900/70 bg-emerald-600/10 hover:bg-emerald-800 hover:text-white border border-emerald-800/15 p-2 rounded">
+                            <button @click="copyText(link.url)" class=" transition-colors duration-200 ease-in-out cursor-pointer text-green-900/70 bg-emerald-600/10 hover:bg-emerald-800 hover:text-white border border-emerald-800/15 p-2 rounded-lg">
                                 
                                 <svg class=" flex justify-center items-center w-3 h-3"  width="13" height="13" viewBox="0 0 16 16"
                                     fill="none">
