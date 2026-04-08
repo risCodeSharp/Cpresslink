@@ -13,7 +13,7 @@ async function selectLink(id: string) {
 </script>
 
 <template>
-    <Card class="rounded-xl ">
+    <Card class="rounded-xl h-min">
         <div class="border-b pb-4 border-b-gray-300/70 py-3 flex justify-between items-center px-4">
             <h4 class="font-bold text-gray-600 tracking-tight text-medium-size">Your Links</h4>
             <p class="text-small-size">{{ store.links.length }} links</p>
@@ -21,7 +21,7 @@ async function selectLink(id: string) {
         <div class="border-b border-b-gray-300/70 py-3 px-4">
             <input class="text-gray-800 bg-slate-200/50 focus:outline-green-700 w-full py-1 px-1.5 outline outline-slate-300 rounded-md" placeholder="Search links..." />
         </div>
-        <div v-for="link in store.links" :key="link.id" class="border-b border-b-gray-300 "> 
+        <div v-for="link in store.links" :key="link.id" class="border-b border-b-gray-300 last:pb-4 "> 
             <button @click="selectLink(link.id)" 
                 class="cursor-pointer border-l-olive-600 w-full h-15 flex px-5 items-center justify-between text-normal-size gap-3 pb-4 pt-5" 
                 :class="{'border-l-3 bg-[#e8f0ea]' : link.id === store.selectedLink?.id}"
