@@ -2,7 +2,7 @@
 import { NCard, NScrollbar, NSelect, NTable, type DataTableColumn } from 'naive-ui';
 import type { SelectMixedOption, SelectOption } from 'naive-ui/es/select/src/interface';
 import { ref, type Ref } from 'vue';
-
+import { useMessage } from 'naive-ui';
 type FilterOption = 'week' | 'month' | 'threeMonth'
 
 const filterValue: Ref<FilterOption> = ref('week');
@@ -28,45 +28,7 @@ interface LinkPerformance {
     ctr: number,
 }
 
-/**
- * try {
- * await navigator.clipboard.writeText('');
- * console.log('copied')
- * } catch (err) {
- *  console.errr('failed to copy');
- * }}}
- * 
- * other 
- * function copyText() {
-      const input = document.getElementById("myInput");
-      const textToCopy = input.value;
-
-      // Use Clipboard API (modern way)
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(textToCopy)
-          .then(() => {
-            document.getElementById("status").innerText = "Copied!";
-          })
-          .catch(err => {
-            document.getElementById("status").innerText = "Failed to copy!";
-            console.error("Error copying text: ", err);
-          });
-      } else {
-        // Fallback for older browsers
-        input.select();
-        input.setSelectionRange(0, 99999); // For mobile devices
-        try {
-          document.execCommand("copy");
-          document.getElementById("status").innerText = "Copied!";
-        } catch (err) {
-          document.getElementById("status").innerText = "Failed to copy!";
-          console.error("Fallback copy failed: ", err);
-        }
-      }
-    }
- */
-
-
+const message = useMessage();
 
 const links: Ref<LinkPerformance[]> = ref(
     [
@@ -79,8 +41,9 @@ const links: Ref<LinkPerformance[]> = ref(
 async function copyText(text: string) {
     try {
         await navigator.clipboard.writeText(text);
-    } catch (err: any) {
-        console.error("Failed to copy text!")
+        message.success('Copied text: ' + text);
+    } catch (err: unknown) {
+        message.error("Failed to copy text!");
     }
 }
 

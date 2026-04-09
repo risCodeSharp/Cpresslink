@@ -3,21 +3,24 @@
 import { RouterView } from 'vue-router';
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
+import { NMessageProvider } from 'naive-ui';
 
 </script>
 
 <template>
 
-  <!-- Navbar -->
-  <Header />
-  <!-- main body -->
-  <div class="flex flex-col justify-between min-h-screen">
-  <main class="m-6 lg:w-6xl lg:mx-auto">
-    <router-view />
-  </main>
-  <Footer />
-  </div>
-  <!-- 
+    <!-- Navbar -->
+    <Header />
+    <!-- main body -->
+    <div class="flex flex-col justify-between min-h-screen">
+        <NMessageProvider>
+            <main class="m-6 lg:w-6xl lg:mx-auto">
+                <router-view />
+            </main>
+        </NMessageProvider>
+        <Footer />
+    </div>
+    <!-- 
 
 <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-neutral-primary-soft border-t border-default shadow-sm md:flex md:items-center md:justify-between md:p-6">
     <span class="text-sm text-body sm:text-center">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
@@ -41,6 +44,6 @@ import Header from '@/components/Header.vue';
 </template>
 <style scoped>
 .font-arial {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 </style>
