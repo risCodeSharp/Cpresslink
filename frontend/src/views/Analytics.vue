@@ -24,11 +24,17 @@ const store = useDashboardStore();
         <div class="w-full">
             <p class="my-2 uppercase font-extralight text-normal-size tracking-widest"><span
                     class="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 "></span>Live Data</p>
-            <h2 class="font-classic text-2xl">{{ store.selectedLink?.name }}</h2>
+            <div class="flex justify-between items-center">
+                <h2 class="font-classic text-2xl py-1">{{ store.selectedLink?.name }}</h2>
+                <div class="py-1 space-x-2">
+                <button class="px-6  bg-white outline outline-emerald-500 rounded-lg">Share</button>
+                <button class="px-6  bg-emerald-500 text-white outline outline-white rounded-lg">Configure</button>
+                </div>
+            </div>
 
-            <LinkDetails class="mt-4"/>
-            <LinksAnalyticsRow class="mt-6"/>
-            <ClickOverTimeCard class="mt-6"/>
+            <LinkDetails class="mt-4" />
+            <LinksAnalyticsRow class="mt-6" />
+            <ClickOverTimeCard class="mt-6" />
             <div class="flex gap-4 mt-6">
                 <TopReferrers />
                 <GeographicalReach />
