@@ -7,12 +7,22 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
-.DS_Store
+
+# Build outputs
 dist
 dist-ssr
 coverage
+
+# Environment files
+.env
+.env.*
 *.local
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Editor directories and files
 .vscode/*
@@ -24,15 +34,15 @@ coverage
 *.sln
 *.sw?
 
+# TypeScript
 *.tsbuildinfo
 
+# Lint cache
 .eslintcache
 
-# Cypress
+# Testing
 /cypress/videos/
 /cypress/screenshots/
-
-# Vitest
 __screenshots__/
 
 # Vite
