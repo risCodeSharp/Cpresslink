@@ -1,7 +1,7 @@
 # CPressLink
 
-🔗 **Live Demo 1:**https://riscodesharp.github.io/Cpresslink/
-🔗 **Live Demo 2:** https://cpresslink.netlify.app/ (not working!)
+🔗 **Live Demo:** https://riscodesharp.github.io/Cpresslink/
+
 
 **A modern link shortening platform UI** — evolving into a full-stack system powered by **Vue + Axum (Rust)**.
 
