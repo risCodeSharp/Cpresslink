@@ -21,7 +21,7 @@ const sidebarOptions = [
 </script>
 <template>
     <div class="flex w-full justify-around">
-        <div class="w-75 h-600">
+        <div class="w-75 ">
             <h2 class="py-2  text-slate-500 text-[0.67rem] uppercase tracking-widest ">Account Workspace</h2>
             <ul class="text-medium-size text-slate-500">
                 <li v-for="option in sidebarOptions">
@@ -29,7 +29,7 @@ const sidebarOptions = [
                 </li>
             </ul>
         </div>
-        <main class="py-2 h-600 mx-2 w-full">
+        <main class="py-2  mx-2 w-full">
             <router-view />
         </main>
     </div>

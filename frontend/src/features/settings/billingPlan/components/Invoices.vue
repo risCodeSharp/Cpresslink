@@ -1,20 +1,77 @@
 <script lang="ts" setup>
-import { NCard, NSpace} from 'naive-ui';
-import type { DataTableColumns } from 'naive-ui'
+import { NCard , NDataTable} from 'naive-ui';
+import type { DataTableColumns,  } from 'naive-ui'
 import { NButton, NTag, useMessage } from 'naive-ui'
 import { reactive, type Reactive } from 'vue';
 
-type Status = 'Paid' | 'Pending';
+type Status = 'PAID' | 'PENDING';
 
-interface UsageRowData {
-    key: number,
+interface InvoiceData {
     date: string,
+    subscription: string,
     amount: string,
     status: Status,
-    invoiceType: string,
+    download_url: string,
 }
-
-
+const invoiceData: Reactive<InvoiceData[]> = reactive([
+  {
+    date: "Jun 1, 2024",      
+    subscription: "Start Plan",    
+    amount: "Free",    
+    status: "PAID",    
+    download_url: "",
+  },
+  {
+    date: "May 1, 2024",      
+    subscription: "Pro Plan (Monthly)",    
+    amount: "Free",    
+    status: 'PAID',    
+    download_url: "",
+  },
+  {
+    date: "Apr 1, 2024",      
+    subscription: "Pro Plan (Monthly)}",    
+    amount: "Free",    
+    status: "PAID",    
+    download_url: "",
+  },
+  {
+    date: "Mar 1, 2024",      
+    subscription: "Start Plan -> Pro Plan(Monthly) Upgraded",    
+    amount: "Free",    
+    status: "PAID",    
+    download_url: "",
+  },
+]);
+/**
+ *     date: string,
+    subscription: string,
+    amount: string,
+    status: Status,
+    download_url: string,
+ */
+const invoiceColumns: DataTableColumns<InvoiceData> = [
+  {
+    title: 'Date',
+    key: 'date'
+  },
+  {
+    title: 'Choosen Subscription',
+    key: 'subscription'
+  },
+  {
+    title: 'Amount',
+    key: 'amount'
+  },
+  {
+    title: 'Paid Status',
+    key: 'status'
+  },
+  {
+    title: 'Download',
+    key: 'download'
+  },
+];
 
 </script>
 
@@ -24,13 +81,14 @@ interface UsageRowData {
             <!-- Refactor remove flex later -->
             <div class="flex text-normal-size justify-between items-center">
                 <div>
-                    <div class="uppercase tracking-widest text-normal-size text-slate-400 mb-0.5 ">History</div>
-                    <h2 class=" text-[18px] font-semibold text-slate-900">Invoices</h2>
+                    <div class="uppercase tracking-wider text-[0.58rem] text-stone-400 mb-0.5 ">History</div>
+                    <h2 class=" text-[1rem] font-semibold text-slate-900">Invoices</h2>
                 </div>
-                <button class="px-5 py-1.5 text-gray-600 outline outline-gray-300 hover:text-gray-800 hover:outline-gray-500 hover:bg-gray-50 cursor-pointer rounded-lg">Download All</button>
+                <button class="px-3 py-1.5 text-[0.68rem] text-gray-600 outline outline-gray-300 hover:text-gray-800 hover:outline-gray-500 hover:bg-gray-50 cursor-pointer rounded-full">Download All</button>
             </div>
+            <NDataTable :columns="invoiceColumns" :data="invoiceData" />
         </template>
-
+        
         
     </NCard>
     <!-- <NSpace vertical :size="12">

@@ -6,8 +6,8 @@ import { NCard } from 'naive-ui';
     <NCard class="rounded-card shadow-around dark-green-card"
         >
         <!-- Refactor remove flex later -->
-        <div class="uppercase tracking-widest text-[0.6rem]  text-white/50 ">Current Plan</div>
-        <div class="text-white/80 flex text-normal-size justify-between items-center">
+        <div class="uppercase tracking-wider text-[0.58rem]  text-white/50 ">Current Plan</div>
+        <div class="text-white/80 flex text-[0.1rem] justify-between items-center">
             <div>
                 <h2 class="text-white/90 font-classic text-[1.45rem]">Pro Plan ⚡</h2>
                 <div class="font-light text-small-size text-white/50 ">Up to 500 links - Custom domains -

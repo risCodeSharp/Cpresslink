@@ -10,8 +10,8 @@ import SettingHeading from '@/features/settings/components/SettingHeading.vue';
     <SettingHeading title="Billing & Plan"
         description="Manage your subscription view usage limits, and download invoices" class="mb-6" />
     <CurrentPlan class="mb-4"/>
-    <Subscriptions class="mb-4"/>
     <Usage class="mb-4"/>
+    <Subscriptions class="mb-4"/>
     <Invoices class="mb-4"/>
     <CancelSubscription class="mb-4"/>
 </template>

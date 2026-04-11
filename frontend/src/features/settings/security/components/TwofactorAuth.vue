@@ -20,7 +20,7 @@ const qrLink = "https://riscodesharp.github.io/Cpresslink/";
             </div>
         </template>
         <div class="flex justify-between items-center">
-            <p class=" text-gray-500 font-normal text-[0.65rem] w-42 mb-4 ">
+            <p class=" text-gray-500 font-normal text-[0.67rem] w-42 pr-1 mb-4 ">
                 Add an extra layer if security to your account.
                 Use an app like Google Autheticator or Authy to gernerate codes.
             </p>

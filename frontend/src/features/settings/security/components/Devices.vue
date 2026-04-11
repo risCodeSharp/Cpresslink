@@ -79,7 +79,7 @@ onMounted(async () => {
                         <span>{{ device.lastSession }} - {{ device.location }}</span>
                     </div>
                     </div>
-                    <button v-if="!device.isCurrentDevice" class=" text-gray-400/85 border border-gray-300 rounded-lg font-medium px-1.5 py-0.5 text-[0.68rem]">Revoke</button>
+                    <button v-if="!device.isCurrentDevice" class="cursor-pointer text-gray-400/85 h-6 border border-gray-300 rounded-lg font-medium px-1.5 py-0.5 text-[0.68rem] text-nowrap">Revoke</button>
                 </div>
             </li>
         </ul>

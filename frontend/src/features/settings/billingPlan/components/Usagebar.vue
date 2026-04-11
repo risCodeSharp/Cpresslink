@@ -22,7 +22,7 @@ const color: ComputedRef<string> = computed(() => {
 
 <template>
     <div>
-        <div class="flex justify-between text-medium-size text-gray-600">
+        <div class="flex justify-between text-[0.74rem] text-gray-600">
             <span>{{ label }}</span>
             <div class="space-x-1">
                 <span>{{ value }} / {{ max }}</span>
@@ -30,7 +30,7 @@ const color: ComputedRef<string> = computed(() => {
             </div>
         </div>
         <div class="w-full h-2 bg-emerald-700/10 rounded-full flex items-center ">
-            <div class="h-1   rounded-full transition-all ease-in duration-300" :class="color"
+            <div class="h-1 rounded-full transition-all ease-in duration-300" :class="color"
                 :style="{ width: percent + '%' }"></div>
         </div>
     </div>
