@@ -3,7 +3,7 @@ import { NCard } from 'naive-ui';
 </script>
 
 <template>
-    <NCard class="rounded-card shadow-around my-6 dark-green-card"
+    <NCard class="rounded-card shadow-around dark-green-card"
         >
         <!-- Refactor remove flex later -->
         <div class="uppercase tracking-widest text-[0.6rem]  text-white/50 ">Current Plan</div>

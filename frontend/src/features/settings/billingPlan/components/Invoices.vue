@@ -19,7 +19,7 @@ interface UsageRowData {
 </script>
 
 <template>
-    <NCard class="rounded-card shadow-around my-6">
+    <NCard class="rounded-card shadow-around">
         <template #header>
             <!-- Refactor remove flex later -->
             <div class="flex text-normal-size justify-between items-center">

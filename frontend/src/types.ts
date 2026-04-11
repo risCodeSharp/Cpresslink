@@ -25,3 +25,19 @@ export type LinkRelation = {
 };
 
 export type LinkMapping = Map<string, LinkRelation>;
+
+
+export interface DeviceInformation {
+    browser: string;
+    device: string;
+    deviceName: string;
+    os: string;
+    userAgent: string;
+}
+
+export interface Location {
+    longitude: number,
+    latitude: number,
+    stateName: string,
+
+}
