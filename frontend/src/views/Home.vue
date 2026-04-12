@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import FeatureSection from "@/components/FeatureSection.vue";
+import Footer from "@/components/Footer.vue";
 import WorkingStepSection from '@/components/WorkingStepSection.vue';
 </script>
 
@@ -58,9 +59,11 @@ import WorkingStepSection from '@/components/WorkingStepSection.vue';
             their URL strategy.</p>
         </div>
         <div class="flex justify-end gap-4 text-white font-lg text-sm w-120 mx-auto">
-          <RouterLink to="/dashboard" class="cursor-pointer text-sm outline-gray-400 transition hover:-translate-y-1 hover:scale-107 hover:outline rounded-md  px-4 py-2 " style=" background: linear-gradient(to bottom, var(--color-teal-800) 0%, var(--color-green-700) 100%);">Go to Dashboard → </RouterLink>
-          <RouterLink to="/analytics" class="cursor-pointer text-sm outline-gray-400 transition hover:-translate-y-1 hover:scale-107 hover:outline rounded-md  px-4 py-2" style=" background: linear-gradient(to bottom, #00703c 0%, #568203  100%);"> View Analytics</RouterLink>
+          <RouterLink to="/dashboard" class="cursor-pointer text-sm transition hover:-translate-y-1 shadow-gray-400 hover:scale-107  rounded-lg  px-4 py-2 " style=" background: linear-gradient(to bottom, var(--color-teal-800) 0%, var(--color-green-700) 100%);">Go to Dashboard → </RouterLink>
+          <RouterLink to="/analytics" class="cursor-pointer text-sm transition hover:-translate-y-1 shadow-gray-400 hover:scale-107  rounded-lg  px-4 py-2" style=" background: linear-gradient(to bottom, #00703c 0%, #568203  100%);"> View Analytics</RouterLink>
         </div>
       </div>
     </section>
+  <Footer class=" w-full "/>
+
 </template>

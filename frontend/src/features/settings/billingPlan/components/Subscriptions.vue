@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { NBadge, NCard, NSwitch } from 'naive-ui';
-import { X, Check } from 'lucide-vue-next';
+import { X, Check, Minus } from 'lucide-vue-next';
 
 </script>
 
@@ -43,10 +43,10 @@ import { X, Check } from 'lucide-vue-next';
                         <Check class="w-4 h-4 inline-block text-emerald-700 mr-0.5" /> 1,000 API calls/month
                     </li>
                     <li class="text-stone-400"><span>
-                            <X class="w-4 h-4 inline-block text-stone-400 mr-0.5" />
+                            <Minus class="w-4 h-4 inline-block text-stone-400 mr-0.5" />
                         </span> No custom domains</li>
                     <li class="text-stone-400"><span>
-                            <X class="w-4 h-4 inline-block text-stone-400 mr-0.5" />
+                            <Minus class="w-4 h-4 inline-block text-stone-400 mr-0.5" />
                         </span> No geo analytics</li>
                 </ul>
             </button>

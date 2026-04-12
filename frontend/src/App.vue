@@ -18,7 +18,6 @@ import { NMessageProvider, NModalProvider } from 'naive-ui';
           <main class="m-6 lg:w-5xl lg:mx-auto">
             <router-view />
           </main>
-          <Footer />
         </div>
 
       </NMessageProvider>

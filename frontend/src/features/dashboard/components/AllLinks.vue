@@ -20,7 +20,7 @@ const editLinkForm = reactive<EditLinkForm>({
     name: '',
     sourceUrl: '',
     destinationUrl: '',
-    status: 'ACTIVE' 
+    status: 'ACTIVE'
 });
 
 function rowProps(row: RowLinkData): HTMLAttributes {
@@ -160,11 +160,15 @@ const columns: DataTableColumns<RowLinkData> = [
     <NCard>
         <template #header>
             <div class="flex justify-between w-full">
-            <h2 class="text-[0.78rem]">All Links</h2>
-            <div class="flex w-full">
-                <span>Q Search links...</span>
-                <span> Filter: </span>
-            </div>
+                <h2 class="text-[1.3rem] font-classic">All Links</h2>
+                <div class="flex justify-end text-[0.78rem] items-center gap-4">
+                    <button class="px-4 cursor-pointer py-1 border border-stone-300 text-gray-600/75 rounded-lg">All</button>
+                    <button class="px-4 cursor-pointer py-1 border border-stone-300 text-gray-600/75 rounded-lg">Active</button>
+                    <button class="px-4 cursor-pointer py-1 border border-stone-300 text-gray-600/75 rounded-lg border-r-2">InActive</button>
+                    <div class="h-6 border-r border-stone-300"></div>
+                    <button class="px-4 cursor-pointer py-1 border border-stone-300 text-gray-600/75 rounded-lg">Sort: Click ↓</button>
+                    <button class="px-4 cursor-pointer py-1 border border-stone-300 text-gray-600/75 rounded-lg">Filter</button>
+                </div>
             </div>
         </template>
 
@@ -172,77 +176,50 @@ const columns: DataTableColumns<RowLinkData> = [
             'font-size': 0.68,
             'padding': '0px',
         }" />
-    <
-    </NCard>
-       <NModal
-           v-model:show="isEditModelShown"
-           preset="card"
-           title="Edit Link"
-           contentScrollable
-           :bordered="false"
-           class="rounded-2xl"
-           :style="{
-               width: 'clamp(340px, 92vw, 520px)',
-               height: 'clamp(420px, 85vh, 560px)'
-           }"
-           :segmented="{ content: true, footer: true }"
-       >
-           <!-- Form Content -->
-           <NForm
-               :model="editLinkForm"
-               labelPlacement="top"
-               size="medium"
-               class="px-1"
-           >
-               <NSpace vertical size="large">
-                   <!-- Link Name Field -->
-                   <NFormItem label="Link Name" path="name">
-                       <NInput
-                           v-model:value="editLinkForm.name"
-                           placeholder="Enter link name"
-                           clearable
-                       />
-                   </NFormItem>
-       
-                   <!-- Source URL Field -->
-                   <NFormItem label="Source URL" path="source">
-                       <NInput
-                           v-model:value="editLinkForm.sourceUrl"
-                           placeholder="https://cpress.link/..."
-                           clearable
-                       />
-                   </NFormItem>
-       
-                   <!-- Destination URL Field -->
-                   <NFormItem label="Custom URL" path="destination">
-                       <NInput
-                           v-model:value="editLinkForm.destinationUrl"
-                           placeholder="https://marketing.enterprise.com/..."
-                           clearable
-                       />
-                   </NFormItem>
-       
-                   <!-- Status Selector -->
-                   <NFormItem label="Status" path="status">
-                       <NSelect
-                           v-model:value="editLinkForm.status"
-                           :options="[
-                               { label: 'Active', value: 'ACTIVE' },
-                               { label: 'Paused', value: 'PAUSED' },
-                               { label: 'Inactive', value: 'INACTIVE' }
-                           ]"
-                       />
-                   </NFormItem>
-               </NSpace>
-           </NForm>
-       
-           <!-- Footer Buttons -->
-           <template #footer>
-               <NSpace justify="end">
-                   <NButton @click="isEditModelShown = false">Cancel</NButton>
-                   <NButton type="primary" @click="isEditModelShown = false">Save</NButton>
-               </NSpace>
-           </template>
+        < </NCard>
+            <NModal v-model:show="isEditModelShown" preset="card" title="Edit Link" contentScrollable :bordered="false"
+                class="rounded-2xl" :style="{
+                    width: 'clamp(340px, 92vw, 520px)',
+                    height: 'clamp(420px, 85vh, 560px)'
+                }" :segmented="{ content: true, footer: true }">
+                <!-- Form Content -->
+                <NForm :model="editLinkForm" labelPlacement="top" size="medium" class="px-1">
+                    <NSpace vertical size="large">
+                        <!-- Link Name Field -->
+                        <NFormItem label="Link Name" path="name">
+                            <NInput v-model:value="editLinkForm.name" placeholder="Enter link name" clearable />
+                        </NFormItem>
 
-           </NModal>
+                        <!-- Source URL Field -->
+                        <NFormItem label="Source URL" path="source">
+                            <NInput v-model:value="editLinkForm.sourceUrl" placeholder="https://cpress.link/..."
+                                clearable />
+                        </NFormItem>
+
+                        <!-- Destination URL Field -->
+                        <NFormItem label="Custom URL" path="destination">
+                            <NInput v-model:value="editLinkForm.destinationUrl"
+                                placeholder="https://marketing.enterprise.com/..." clearable />
+                        </NFormItem>
+
+                        <!-- Status Selector -->
+                        <NFormItem label="Status" path="status">
+                            <NSelect v-model:value="editLinkForm.status" :options="[
+                                { label: 'Active', value: 'ACTIVE' },
+                                { label: 'Paused', value: 'PAUSED' },
+                                { label: 'Inactive', value: 'INACTIVE' }
+                            ]" />
+                        </NFormItem>
+                    </NSpace>
+                </NForm>
+
+                <!-- Footer Buttons -->
+                <template #footer>
+                    <NSpace justify="end">
+                        <NButton @click="isEditModelShown = false">Cancel</NButton>
+                        <NButton type="primary" @click="isEditModelShown = false">Save</NButton>
+                    </NSpace>
+                </template>
+
+            </NModal>
 </template>

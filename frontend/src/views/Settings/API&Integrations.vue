@@ -1,10 +1,15 @@
 <script lang="ts" setup>
 
+import ApiKeys from '@/features/settings/api_integrations/ApiKeys.vue';
+import ConnectedIntegrations from '@/features/settings/api_integrations/ConnectedIntegrations.vue';
+import RequestLog from '@/features/settings/api_integrations/RequestLog.vue';
+import Webhooks from '@/features/settings/api_integrations/Webhooks.vue';
 import SettingHeading from '@/features/settings/components/SettingHeading.vue';
 </script>
 <template>
     <SettingHeading title="API & Integrations"
         description="Manage API keys for programmatic access and connect third-party tools to your workspace." class="mb-6" />
-        
+    <ApiKeys class="mb-6"/>
+    <ConnectedIntegrations class="mb-6"/>
 
 </template>

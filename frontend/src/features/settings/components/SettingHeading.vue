@@ -12,7 +12,7 @@ const props = defineProps<Props>();
 
 <template>
     <div>
-        <h1 class="font-classic text-2xl text-slate-900">{{ title }}</h1>
+        <h1 class="font-classic text-[1.7rem] text-slate-900">{{ title }}</h1>
         <p class="text-normal-size text-gray-500
     ">{{ description }}</p>
     </div>

@@ -18,7 +18,7 @@ import { NCard } from 'naive-ui';
                     Cancelling will downgrade your account to Free tier at the
                     end of your billing period. Your link link will continue to redirect but analytics will be limited.
                 </p>
-                <div class="flex gap-5 mt-3 max-sm:flex-wrap">
+                <div class="flex gap-5 mt-3 max-sm:flex-wrap justify-end">
                     <button
                         class="bg-stone-100/60 hover:bg-rose-100/45 text-[0.68rem] px-3 py-1.5 rounded-lg text-rose-600 font-light w-70 outline outline-red-200 hover:outline-rose-600 cursor-pointer transition  ease-in-out duration-200 ">Cancel
                         Pro Subscription</button>

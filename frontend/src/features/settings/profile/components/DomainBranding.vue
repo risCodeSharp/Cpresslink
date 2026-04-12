@@ -12,7 +12,7 @@ import { NCard, NInput } from 'naive-ui';
                     <div class="uppercase tracking-wider text-slate-400 mb-0.5 ">Workspace</div>
                     <h2 class=" text-[17px] font-semibold text-slate-900">Domain & Branding</h2>
                 </div>
-                <button class="bg-black text-white py-1.5 px-4 rounded-lg">Save Changes</button>
+                <button class=" transition-colors duration-200 ease-linear cursor-pointer bg-stone-300/70 hover:bg-stone-800 hover:text-white  text-[0.68rem]  py-1 px-3 rounded-full">Save Changes</button>
             </div>
         </template>
         

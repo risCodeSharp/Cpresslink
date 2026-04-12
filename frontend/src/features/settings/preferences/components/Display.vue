@@ -45,8 +45,8 @@ const notificationSwitches = reactive([
             <!-- Refactor remove flex later -->
             <div class="flex text-normal-size justify-between items-center">
                 <div>
-                    <div class="uppercase tracking-widest text-normal-size text-slate-400 mb-0.5 ">Notifications</div>
-                    <h2 class=" text-[18px] font-semibold text-slate-900">Email & Alerts</h2>
+                    <div class="uppercase tracking-wider text-[0.58rem] text-stone-400 mb-0.5 ">Notifications</div>
+                    <h2 class=" text-[1rem] font-semibold text-slate-900">Email & Alerts</h2>
                 </div>
             </div>
         </template>
