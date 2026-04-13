@@ -93,3 +93,4 @@ target/
 # OS files
 Desktop.ini
 frontend/src/features/dashboard/components/example.vue
+frontend/todo.md
