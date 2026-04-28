@@ -1,6 +1,6 @@
-use sqlx::{PgPool, pool};
+use sqlx::{PgPool};
 
-use crate::{db::respository::analytics::AnalyticsRepository, error::AppError, models::events::ClickEvent, queue, utils::{geo::GeoInfo, user_agent::UserAgentInfo}};
+use crate::{db::respository::analytics::AnalyticsRepository, error::AppError, models::events::ClickEvent, utils::{geo::GeoInfo, user_agent::UserAgentInfo}};
 
 
 pub struct AnalyticsService;
