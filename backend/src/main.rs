@@ -74,7 +74,7 @@ pub async fn run() {
         )
         .merge(SwaggerUi::new("/docs").url("/docs/openapi.json", ApiDoc::openapi()));
 
-    let port = 3080;
+    let port = 8030;
     let addr = format!("0.0.0.0:{port}");
 
     let listener = tokio::net::TcpListener::bind(&addr)
