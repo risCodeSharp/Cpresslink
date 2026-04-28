@@ -17,7 +17,7 @@ use bcrypt::{DEFAULT_COST, hash, verify};
 use serde::{Deserialize, Serialize};
 use sqlx::PgPool;
 
-const REDIRECT_URI: &str = "http://localhost:3080/api/auth/google/callback";
+
 
 pub async fn register(
     state: &AppState,
@@ -68,14 +68,14 @@ pub async fn login(pool: &PgPool, jwt_secret: &str, req: LoginRequest) -> Result
     Ok(token)
 }
 
-pub fn google_auth_url(client_id: &str) -> String {
+pub fn google_auth_url(env_registry: &EnvRegistry, client_id: &str) -> String {
     format!(
         "https://accounts.google.com/o/oauth2/v2/auth\
         ?client_id={}\
         &redirect_uri={}\
         &response_type=code\
         &scope=openid%20email%20profile",
-        client_id, REDIRECT_URI
+        client_id, env_registry.get(EnvKey::RedirectUri)
     )
 }
 
@@ -95,7 +95,7 @@ pub async fn get_google_oauth_token(
         ("code", authorization_code),
         ("client_id", env_registry.get(EnvKey::ClientId)),
         ("client_secret", env_registry.get(EnvKey::ClientSecret)),
-        ("redirect_uri", REDIRECT_URI.into()),
+        ("redirect_uri", env_registry.get(EnvKey::RedirectUri)),
         ("grant_type", "authorization_code".to_string()),
     ];
 

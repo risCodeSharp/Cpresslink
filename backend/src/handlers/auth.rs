@@ -60,7 +60,7 @@ async fn login(
 
 pub async fn google_login(State(state): State<AppState>) -> Redirect {
     let client_id = &state.env_keys.get(EnvKey::ClientId);
-    let url = auth_service::google_auth_url(client_id);
+    let url = auth_service::google_auth_url(&state.env_keys, client_id);
     Redirect::to(&url)
 }
 
