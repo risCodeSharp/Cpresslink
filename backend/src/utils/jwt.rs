@@ -5,11 +5,11 @@ use serde::{Deserialize, Serialize};
 // TODO: LATER Subscription add in the auth
 #[derive(Serialize, Deserialize,Clone)]
 pub struct JwtClaims {
-    pub sub: i32,
+    pub sub: i64,
     pub exp: usize,
 }
 
-pub fn generate_token(user_id: i32, secret: &str) -> Result<String, jsonwebtoken::errors::Error> {
+pub fn generate_token(user_id: i64, secret: &str) -> Result<String, jsonwebtoken::errors::Error> {
     let jwt_claims = JwtClaims {
         sub: user_id,
         exp: (chrono::Utc::now() + chrono::Duration::days(1)).timestamp() as usize,

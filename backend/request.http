@@ -1,0 +1,41 @@
+
+# Create account 
+POST http://127.0.0.1:3080/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "baman",
+    "email": "as@hacknapp.com",
+    "password": "fb"
+}
+
+###
+
+POST http://127.0.0.1:3080/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "as@hacknapp.com",
+    "password": "fb"
+}
+
+###
+
+# Create Link
+POST http://127.0.0.1:3080/api/links
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImV4cCI6MTc3NzQ0Mjg5NH0.XACeli_K_NS67p0EwjDYuMCfMe5sisD_xwVvOBMKnsY
+
+{
+    "name": "gm",
+    "url": "https://www.gmail.com",
+    "slug": "gm"
+}
+
+###
+# short yt(2puqMa)
+# Redirect link
+GET http://127.0.0.1:3080/r/GZTWV6?rf=lama
+# GET http://127.0.0.1:3080/r/_N-nG4?rf=meta
+
+

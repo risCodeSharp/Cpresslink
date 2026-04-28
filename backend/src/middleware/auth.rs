@@ -1,6 +1,6 @@
 use crate::{
     config::state::AppState,
-    utils::{jwt, response::ApiResponse},
+    utils::{jwt, response::ApiResponse, env_registry::EnvKey},
 };
 use axum::{
     Json,
@@ -34,7 +34,7 @@ pub async fn auth_middleware(
         })?;
 
     // Serialize the struct from the token
-    let claims = jwt::verify_token(token, &state.jwt_secret).map_err(|e| {
+    let claims = jwt::verify_token(token, &state.env_keys.get(EnvKey::JwtSecret )).map_err(|e| {
         let res = match e.kind() {
             ErrorKind::ExpiredSignature => {
                 ApiResponse::<()>::error("Token expired", StatusCode::UNAUTHORIZED)

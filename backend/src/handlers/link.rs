@@ -35,7 +35,7 @@ pub async fn create_link(
 pub async fn get_link(
     State(state): State<AppState>,
     Extension(jwt_claims): Extension<JwtClaims>,
-    Path(link_id): Path<i32>,
+    Path(link_id): Path<i64>,
 ) -> impl IntoResponse {
     match LinkService::get_link_by_id(&state.pool, jwt_claims.sub, link_id).await {
         Ok(link) => (

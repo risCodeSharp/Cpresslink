@@ -7,6 +7,9 @@ pub enum AppError {
 
     #[error("No Record is found")]
     NoRecordsFound,
+    
+    #[error("Failed to {0} deserialize the object")]
+    DeserializeFailed(String),
 
     #[error("No User is found")]
     NoUserFound,
@@ -24,7 +27,22 @@ InvalidCredentials,
     Unauthorized(Option<String>),
 
     #[error("Failed connection to redis")]
-    FailedRedisConnection(#[from] redis::RedisError)
+    FailedRedisConnection(#[from] redis::RedisError),
+
+    #[error("Invalid of sending email message {0}")]
+    InvalidSendEmailMessage(String),
+
+    #[error("Invalid Send To/Receiver Email")]
+    InvalidToSendEmail(String),
+
+    #[error("Failed to Send Email. {0}")]
+    FailedToSendMail(String),
+
+    #[error("Failed to create JWT token. [Err]: {0}")]
+    FailedToCreateJwtToken(String),
+
+    #[error("Wrong token")]
+    InvalidToken,
 }
 
 impl From<sqlx::Error> for AppError {
