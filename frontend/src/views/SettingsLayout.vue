@@ -10,10 +10,13 @@ const sidebarOptions = [
     { icon: '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="2" stroke="currentColor" stroke-width="1.3"></rect><path d="M2 7h12" stroke="currentColor" stroke-width="1.3"></path></svg>', text: "Billing", to: "billing" },
     { icon: '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l-3 2 3 2M12 6l3 2-3 2M9 4l-2 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>', text: "API & Integrations", to: "api_integrations" },
 ]
-
+import Header from "@/components/Header.vue";
 </script>
+
+
 <template>
-    
+    <Header />
+    <main class="mx-10 mt-12 lg:w-5xl lg:mx-auto">
     <div class="flex w-full justify-around">
         <div class="w-80 ">
             <h2 class="py-2  text-slate-500 text-[0.67rem] uppercase tracking-widest ">Account Workspace</h2>
@@ -23,8 +26,9 @@ const sidebarOptions = [
                 </li>
             </ul>
         </div>
-        <main class="py-2  mx-2 w-full">
+        <section class="py-2  mx-2 w-full">
             <router-view />
-        </main>
+        </section>
     </div>
+    </main>
 </template>

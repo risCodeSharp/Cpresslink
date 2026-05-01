@@ -11,13 +11,14 @@ import TopReferrers from '@/features/analytics/components/TopReferrers.vue';
 import { useDashboardStore } from '@/stores/dashboardStore';
 import { NCard } from 'naive-ui';
 const store = useDashboardStore();
+import Header from "@/components/Header.vue";
 </script>
-<!-- later https://brand.com/collections/summer-2024-->
-<!-- later \max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;-->
-
 
 
 <template>
+  
+      <Header class="mb-10"/>
+    <main class="mx-10 lg:w-5xl lg:mx-auto">
     <DateRangeNavbar />
     <div class="flex my-6 gap-6">
         <LinksSidebar class="w-60 " />
@@ -42,4 +43,5 @@ const store = useDashboardStore();
             </div>
         </div>
     </div>
+    </main>
 </template>

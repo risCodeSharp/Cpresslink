@@ -15,7 +15,7 @@ pub enum AppError {
     NoUserFound,
 
     #[error("Invalid credentials")]
-InvalidCredentials,
+    InvalidCredentials,
 
     #[error("Database error: {0}")]
     DatabaseError(String),
@@ -28,6 +28,10 @@ InvalidCredentials,
 
     #[error("Failed connection to redis")]
     FailedRedisConnection(#[from] redis::RedisError),
+    
+    
+    #[error("Failed to create user to notify of creation of account")]
+    FailedUserCreatedNotifcation,
 
     #[error("Invalid of sending email message {0}")]
     InvalidSendEmailMessage(String),

@@ -7,6 +7,6 @@
       <li>API Documentation</li>
       <li>Support</li>
     </ul>
-    <p>© 2024 CPressLink</p>
+    <p>© 2026 CPressLink</p>
   </footer>
 </template>

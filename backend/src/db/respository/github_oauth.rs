@@ -6,11 +6,11 @@ use crate::{
     models::auth::{CreateOAuthUser, UserResponse},
 };
 
-const GOOGLE_PROVIDER: &str = "google";
+const GITHUB_PROVIDER: &str = "github";
 
-pub struct GoogleAuthRepository;
+pub struct GithubAuthRepository;
 
-impl GoogleAuthRepository {
+impl GithubAuthRepository {
     pub async fn create(
         pool: &PgPool,
         payload: &CreateOAuthUser,
@@ -20,7 +20,7 @@ impl GoogleAuthRepository {
             values($1, $2, $3, $4) 
             RETURNING id, username, email, created_at",
         )
-        .bind(GOOGLE_PROVIDER)
+        .bind(GITHUB_PROVIDER)
         .bind(&payload.oauth_id)
         .bind(&payload.username)
         .bind(&payload.email)
@@ -41,7 +41,7 @@ impl GoogleAuthRepository {
                 )",
         )
         .bind(oauth_id)
-        .bind(GOOGLE_PROVIDER)
+        .bind(GITHUB_PROVIDER)
         .fetch_one(pool)
         .await?;
         Ok(user_exists)
@@ -56,7 +56,7 @@ impl GoogleAuthRepository {
                AND oauth_provider = $2",
         )
         .bind(oauth_id)
-        .bind(GOOGLE_PROVIDER)
+        .bind(GITHUB_PROVIDER)
         .fetch_optional(pool)
         .await?;
 

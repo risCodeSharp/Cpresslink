@@ -1,8 +1,8 @@
 -- Add migration script here
 CREATE TABLE users(
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    username VARCHAR(50) NOT NULL,
     oauth_provider VARCHAR(50),
     oauth_id TEXT,
     password_hash TEXT,
@@ -13,7 +13,7 @@ CREATE TABLE users(
         (oauth_provider IS NOT NULL AND oauth_id IS NOT NULL)
         OR (password_hash IS NOT NULL)
     ),
-
+    UNIQUE(email, username, oauth_provider),
     UNIQUE (oauth_provider, oauth_id)
 );
 

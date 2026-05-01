@@ -10,19 +10,25 @@ use axum::{
     response::{IntoResponse, Response},
 };
 use jsonwebtoken::errors::ErrorKind;
+use tracing::info;
 
 pub async fn auth_middleware(
-    State(state): State<AppState>,
     mut req: Request,
     next: Next,
 ) -> Result<Response, Response> {
-    // Extracting token form the header
-    let token = req
-        .headers()
-        .get("Authorization")
-        .and_then(|h| h.to_str().ok())
-        .and_then(|h| h.strip_prefix("Bearer "))
-        .ok_or_else(|| {
+    let state = req
+    .extensions()
+    .get::<AppState>()
+    .cloned()
+    .ok_or(StatusCode::INTERNAL_SERVER_ERROR.into_response())?;
+// Extracting token form the header
+info!("Has state: {}", req.extensions().get::<AppState>().is_some());
+let token = req
+.headers()
+.get("Authorization")
+.and_then(|h| h.to_str().ok())
+.and_then(|h| h.strip_prefix("Bearer "))
+.ok_or_else(|| {
             (
                 StatusCode::UNAUTHORIZED,
                 Json(ApiResponse::<()>::error(

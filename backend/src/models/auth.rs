@@ -18,9 +18,14 @@ pub struct UserResponse {
     pub email: String,
     pub created_at: DateTime<Utc>,
 }
+#[derive(Serialize, Deserialize)]
+pub struct AuthResponse {
+    pub user: UserResponse,
+    pub access_token: String,
+}    
 
 #[derive(Serialize, Deserialize)]
-pub struct CreateGoogleOauthUser {
+pub struct CreateOAuthUser {
     pub username: String,
     pub email: String,
     // pub provider_name: String,
@@ -35,24 +40,25 @@ pub struct RegisterRequest {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct GoogleOauthUserLoginResponse {
-    pub user: UserResponse,
-    pub jwt_token: String,
-}
-
-impl GoogleOauthUserLoginResponse {
-    pub fn new(user: UserResponse, jwt_token: String) -> Self {
-        Self {
-            user,
-            jwt_token
-        }
-    }
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct LoginRequest {
     pub email: String,
     pub password: String,
 }
 
+#[derive(Serialize, Deserialize)]
+pub struct OAuthUserLoginResponse {
+    pub user: UserResponse,
+    pub jwt_token: String,
+}
 
+
+
+
+impl OAuthUserLoginResponse {
+    pub fn new(user: UserResponse, jwt_token: String) -> Self {
+        Self {
+            user,
+            jwt_token
+        }    
+    }    
+}    

@@ -13,11 +13,14 @@ use axum::{
     response::{IntoResponse, Redirect},
     routing,
 };
+use tracing::info;
 
 async fn register(
     State(state): State<AppState>,
     Json(payload): Json<RegisterRequest>,
 ) -> impl IntoResponse {
+    info!("Register is started");
+
     match auth_service::register(&state, payload).await {
         Ok(Some(user)) => (
             StatusCode::OK,
@@ -45,7 +48,7 @@ async fn login(
     State(state): State<AppState>,
     Json(payload): Json<LoginRequest>,
 ) -> impl IntoResponse {
-    match auth_service::login(&state.pool, &state.env_keys.get(EnvKey::JwtSecret), payload).await {
+    match auth_service::login(&state.pool, &state.env_keys, payload).await {
         Ok(token) => (
             StatusCode::OK,
             Json(ApiResponse::success(token, StatusCode::OK)),
@@ -59,30 +62,58 @@ async fn login(
 
 
 pub async fn google_login(State(state): State<AppState>) -> Redirect {
-    let client_id = &state.env_keys.get(EnvKey::ClientId);
-    let url = auth_service::google_auth_url(&state.env_keys, client_id);
+    
+    let url = auth_service::google_auth_url(&state.env_keys);
+    Redirect::to(&url)
+}
+
+pub async fn github_login(State(state): State<AppState>) -> Redirect {
+    let url = auth_service::github_auth_url(&state.env_keys);
     Redirect::to(&url)
 }
 
 
+
 #[derive( Deserialize)]
-struct GoogleAuthQuery {
+struct AuthQuery {
     code: String,
 }
 
 async fn google_callback(
     State(state): State<AppState>,
-    Query(query): Query<GoogleAuthQuery>,
+    Query(query): Query<AuthQuery>,
 ) -> impl IntoResponse {
       match auth_service::google_oauth_login(&state, query.code ).await {
-        Ok(token) => (
-            StatusCode::OK,
-            Json(ApiResponse::success(token, StatusCode::OK)),
-        ),
-        Err(e) => (
+        Ok(Some(token)) => {
+           return Redirect::to(&format!("http://localhost:5173/Cpresslink/oauth?token={}", token.jwt_token)).into_response();
+        },
+        Ok(None) => {return (
             StatusCode::UNAUTHORIZED,
-            Json(ApiResponse::error(e.to_string(), StatusCode::UNAUTHORIZED)),
-        ),
+            Json(ApiResponse::<()>::error("Failed oauth", StatusCode::UNAUTHORIZED)),
+        ).into_response();},
+        Err(e) => {return (
+            StatusCode::UNAUTHORIZED,
+            Json(ApiResponse::<()>::error(e.to_string(), StatusCode::UNAUTHORIZED)),
+        ).into_response();},
+    }
+}
+
+async fn github_callback(
+    State(state): State<AppState>,
+    Query(query): Query<AuthQuery>,
+) -> impl IntoResponse {
+      match auth_service::github_oauth_login(&state, query.code ).await {
+        Ok(Some(token)) => {
+           return Redirect::to(&format!("http://localhost:5173/Cpresslink/oauth?token={}", token.jwt_token)).into_response();
+        },
+        Ok(None) => {return (
+            StatusCode::UNAUTHORIZED,
+            Json(ApiResponse::<()>::error("Failed oauth", StatusCode::UNAUTHORIZED)),
+        ).into_response();},
+        Err(e) => {return (
+            StatusCode::UNAUTHORIZED,
+            Json(ApiResponse::<()>::error(e.to_string(), StatusCode::UNAUTHORIZED)),
+        ).into_response();},
     }
 }
 
@@ -91,7 +122,9 @@ pub fn router() -> Router<AppState> {
         .route("/register", routing::post(register))
         .route("/login", routing::post(login))
         .route("/google", routing::get(google_login))
+        .route("/github", routing::get(github_login))
         .route("/google/callback", routing::get(google_callback))
+        .route("/github/callback", routing::get(github_callback))
 }
 
 

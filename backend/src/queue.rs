@@ -1,6 +1,5 @@
 use redis::AsyncCommands;
 use serde::{Serialize, de::DeserializeOwned};
-use tracing::info;
 
 use crate::{models::events::WorkerEvents};
 

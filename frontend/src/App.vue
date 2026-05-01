@@ -12,12 +12,9 @@ import { NMessageProvider, NModalProvider } from 'naive-ui';
     <NModalProvider>
       <NMessageProvider>
 
-        <Header />
 
-        <div class="flex flex-col justify-between min-h-[95vh]">
-          <main class="m-6 lg:w-5xl lg:mx-auto">
+        <div class="flex flex-col justify-between ">
             <router-view />
-          </main>
         </div>
 
       </NMessageProvider>

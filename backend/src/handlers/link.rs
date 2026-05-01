@@ -2,7 +2,7 @@ use axum::{
     Extension, Router,
     extract::{Json, Path, State},
     http::StatusCode,
-    middleware::from_fn_with_state,
+    middleware::{from_fn, from_fn_with_state},
     response::IntoResponse,
     routing,
 };
@@ -65,10 +65,10 @@ pub async fn list_links(
     }
 }
 
-pub fn router(state: AppState) -> Router<AppState> {
+pub fn router() -> Router<AppState> {
     Router::new()
         .route("/links", routing::get(list_links))
         .route("/links/{slug}", routing::get(get_link))
         .route("/links", routing::post(create_link))
-        .layer(from_fn_with_state(state, auth_middleware))
+        .layer(from_fn(auth_middleware))
 }

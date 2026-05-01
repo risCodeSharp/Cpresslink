@@ -53,8 +53,9 @@ const features: Feature[] = [
 
 
 <template>
+    <div>
     <section class="mx-5 xxl:mx-90 xl:w-270 xl:mx-auto lg:mx-35 md:mx-10">
-        <div class="mt-15 mb-2  text-gray-400">
+        <div class=" mb-2  text-gray-400">
             <p class="tracking-wider text-sm">WHY CPRESSLINK</p>
             <h2 class="tracking-tight my-3 text-2xl text-gray-700 font-classic">Everything a link needs to perform </h2>
         </div>
@@ -73,4 +74,5 @@ const features: Feature[] = [
             </FeatureCard>
         </div>
     </section>
+    </div>
 </template>

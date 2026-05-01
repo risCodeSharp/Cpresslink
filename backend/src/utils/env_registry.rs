@@ -6,15 +6,18 @@ use strum::{AsRefStr, Display, EnumIter, EnumString};
 #[strum(serialize_all = "SCREAMING_SNAKE_CASE")]
 pub enum EnvKey {
     JwtSecret,
-    ClientId,
-    ClientSecret,
+    GoogleClientId,
+    GoogleClientSecret,
+    GithubClientId,
+    GithubClientSecret,
     RedisUrl,
     DatabaseUrl,
     SenderEmail,
     SmtpUser,
     SmtpKey,
     SmtpTlsDomain,
-    RedirectUri
+    GoogleRedirectUri,
+    GithubRedirectUri
 }
 
 #[derive(Clone)]

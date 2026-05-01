@@ -31,8 +31,9 @@ const steps: Step[] = [
 
 
 <template>
+    <div>
     <section class="mx-5 xxl:mx-90 xl:w-270 xl:mx-auto lg:mx-35 md:mx-10 my-20">
-        <div class="mt-15 mb-2  text-gray-400">
+        <div class=" text-gray-400">
             <p class="tracking-wider text-sm">HOW IT WORKS</p>
             <h2 class="tracking-tight my-3 text-2xl text-gray-700 font-classic">Three steps to a smarter link</h2>
         </div>
@@ -40,8 +41,9 @@ const steps: Step[] = [
             No setup required. Paste, shorten, share - and watch the data roll in.
         </h3>
         <!-- main content -->
-         <div class="grid grid-cols-3 gap-3 my-10">
+         <div class="grid grid-cols-3 gap-3 mt-15">
              <StepItem v-for="step in steps" :step="step.step" :title="step.title" :description="step.description"/>
          </div>
     </section>
+    </div>
 </template>

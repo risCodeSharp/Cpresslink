@@ -2,10 +2,14 @@
 import FeatureSection from "@/components/FeatureSection.vue";
 import Footer from "@/components/Footer.vue";
 import WorkingStepSection from '@/components/WorkingStepSection.vue';
+import Header from "@/components/Header.vue";
 </script>
 
 
 <template>
+  
+      <Header class="mb-10"/>
+    <main class="mx-10 lg:w-5xl lg:mx-auto">
       <section class="flex flex-col items-center justify-center h-220 text-center border-b border-b-gray-300 ">
       <p class="text-gray-500 font-light py-3 tracking-widest text-[0.8rem]">CPRESSLINK</p>
       <h1 class=" font-classic text-6xl xl:text-7xl py-3  mx-auto"><span>Shorten Links.</span> <span
@@ -49,21 +53,45 @@ import WorkingStepSection from '@/components/WorkingStepSection.vue';
       </div>
     </section>
 
-    <FeatureSection />
-    <WorkingStepSection />
-    <section class="mx-10 xxl:mx-90 xl:w-270 xl:mx-auto lg:mx-35 md:mx-10">
-      <div class="w-full mx-auto m-10 px-7 py-10 rounded-xl dark-green-card flex justify-between items-center gap-7 ">
-        <div class="w-full">
-          <h3 class="font-classic text-3xl text-white mb-2">Ready to take control of your links?</h3>
-          <p class="text-sm text-green-100"> Join thousands of teams using CPressLink to track, optimise, and scale
-            their URL strategy.</p>
-        </div>
-        <div class="flex justify-end gap-4 text-white font-lg text-sm w-120 mx-auto">
-          <RouterLink to="/dashboard" class="cursor-pointer text-sm transition hover:-translate-y-1 shadow-gray-400 hover:scale-107  rounded-lg  px-4 py-2 " style=" background: linear-gradient(to bottom, var(--color-teal-800) 0%, var(--color-green-700) 100%);">Go to Dashboard → </RouterLink>
-          <RouterLink to="/analytics" class="cursor-pointer text-sm transition hover:-translate-y-1 shadow-gray-400 hover:scale-107  rounded-lg  px-4 py-2" style=" background: linear-gradient(to bottom, #00703c 0%, #568203  100%);"> View Analytics</RouterLink>
-        </div>
+    <FeatureSection class="mt-10 mb-3 flex items-center "/>
+    <WorkingStepSection class="my flex items-center "/>
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+  <!-- Maintaining the lighter emerald gradient -->
+  <div class="my-10 overflow-hidden rounded-2xl bg-linear-to-br from-emerald-800 via-emerald-700 to-emerald-600 p-6 md:px-10 md:py-8 shadow-lg">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+      
+      <!-- Text Content: Refined smaller sizing -->
+      <div class="max-w-md text-center lg:text-left">
+        <h3 class="font-classic text-lg md:text-xl text-white mb-2 leading-snug tracking-wide drop-shadow-sm">
+          Ready to take control of your links?
+        </h3>
+        <p class="text-emerald-50/85 text-xs md:text-[0.85rem] font-light leading-relaxed">
+          Join thousands of teams using <span class="font-medium text-white">CPressLink</span> to track, optimise, and scale their URL strategy.
+        </p>
       </div>
-    </section>
+
+      <!-- Action Buttons: Slightly more compact to match text -->
+      <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+        <RouterLink 
+          to="/dashboard" 
+          class="group flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-2.5 text-[0.75rem] font-bold uppercase tracking-widest text-emerald-950 transition-all hover:bg-white hover:scale-105 shadow-md"
+        >
+          Go to Dashboard
+          <span class="ml-1.5 transition-transform group-hover:translate-x-1">→</span>
+        </RouterLink>
+        
+        <RouterLink 
+          to="/analytics" 
+          class="rounded-xl border border-white/30 bg-white/10 px-5 py-2.5 text-[0.75rem] font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+        >
+          View Analytics
+        </RouterLink>
+      </div>
+      
+    </div>
+  </div>
+</section>
+    </main>
   <Footer class=" w-full "/>
 
 </template>

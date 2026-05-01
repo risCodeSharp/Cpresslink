@@ -11,7 +11,7 @@ impl AnalyticsService {
         Ok(click_id)
     }
 
-    pub async fn increment_click(link_id: i64) -> Result<i64, AppError> {
+    pub async fn increment_click(_link_id: i64) -> Result<i64, AppError> {
         Ok(1)
     }
 

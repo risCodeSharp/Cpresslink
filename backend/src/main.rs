@@ -63,15 +63,17 @@ pub async fn run() {
             "/api",
             Router::new()
             .nest("/auth", handlers::auth::router())
-            .merge( handlers::link::router(state.clone()))
+            .merge( handlers::link::router())
         )
         .merge(handlers::redirect::router())
         .route("/test", get(your_ip))
         .with_state(state)
         .layer(cors)
         .layer(
-            TraceLayer::new_for_http().make_span_with(DefaultMakeSpan::new().include_headers(true)),
-        )
+    TraceLayer::new_for_http()
+        .make_span_with(DefaultMakeSpan::new().include_headers(true))
+        .on_failure(())
+)
         .merge(SwaggerUi::new("/docs").url("/docs/openapi.json", ApiDoc::openapi()));
 
     let port = 8030;

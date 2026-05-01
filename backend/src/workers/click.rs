@@ -1,5 +1,5 @@
 use sqlx::PgPool;
-use tracing::{debug, error, info};
+use tracing::{error, info};
 
 use crate::models::events::{ClickEvent, MilestoneEvent, NotificationEvent, WorkerEvents};
 use crate::queue::{RedisConsumer, RedisPublisher};
