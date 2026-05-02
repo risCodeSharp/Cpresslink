@@ -63,7 +63,7 @@ pub async fn run() {
             "/api",
             Router::new()
             .nest("/auth", handlers::auth::router())
-            .merge( handlers::link::router())
+            .merge( handlers::link::router(state.clone()))
         )
         .merge(handlers::redirect::router())
         .route("/test", get(your_ip))

@@ -38,7 +38,6 @@ const handleRegister = async () => {
         <nav class="flex gap-16 w-full justify-between h-12 px-10 items-center ">
             <div class="flex gap-7  items-center font-arial">
                 <RouterLink to="/"><img class="h-25 max-w-25" :src="logo" alt="CPressLink"></RouterLink>
-
             </div>
 
             <div class="text-[0.78rem] font-normal space-x-2">

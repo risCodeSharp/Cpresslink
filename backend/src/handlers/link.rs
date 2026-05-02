@@ -20,6 +20,7 @@ pub async fn create_link(
     Extension(jwt_claims): Extension<JwtClaims>,
     Json(payload): Json<CreateLinkRequest>,
 ) -> impl IntoResponse {
+    println!("Check!");
     match LinkService::create(&state, payload, jwt_claims.sub).await {
         Ok(link) => (
             StatusCode::CREATED,
@@ -65,10 +66,10 @@ pub async fn list_links(
     }
 }
 
-pub fn router() -> Router<AppState> {
+pub fn router(state: AppState) -> Router<AppState> {
     Router::new()
         .route("/links", routing::get(list_links))
         .route("/links/{slug}", routing::get(get_link))
         .route("/links", routing::post(create_link))
-        .layer(from_fn(auth_middleware))
+        .layer(from_fn_with_state(state.clone(), auth_middleware))
 }
