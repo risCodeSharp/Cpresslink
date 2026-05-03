@@ -99,11 +99,11 @@ async fn main() {
     dotenvy::dotenv().ok();
     utils::logger::init_tracing();
 
-    let r = utils::email_templates::welcome_email("Good man");
-      match utils::email::send("xeyave3913@hacknapp.com", r.subject, r.text_body, r.html_body).await {
-       Ok(_) =>  println!("Successfully send mail!"),
-       Err(e) => println!("{:#?}",e.to_string())
-   };
+   //  let r = utils::email_templates::welcome_email("Good man");
+   //    match utils::email::send("xeyave3913@hacknapp.com", r.subject, r.text_body, r.html_body).await {
+   //     Ok(_) =>  println!("Successfully send mail!"),
+   //     Err(e) => println!("{:#?}",e.to_string())
+   // };
 
     run().await;
 }
