@@ -107,7 +107,7 @@ impl LinkRepository {
     }
     pub async fn list_links(pool: &PgPool, user_id: i64) -> Result<Vec<ShortLink>, AppError> {
         let links: Vec<ShortLink> = sqlx::query_as::<_, ShortLink>(
-            "SELECT id, user_id, name, slug, destination, created_at, expires_at, short_code
+            "SELECT id, user_id, name, slug, destination, created_at, expires_at, short_code, notified
             FROM shortlinks
             WHERE user_id = $1"
         )

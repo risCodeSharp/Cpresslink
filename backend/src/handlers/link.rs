@@ -63,7 +63,7 @@ pub async fn list_links(
             StatusCode::BAD_REQUEST,
             Json(ApiResponse::error(e.to_string(), StatusCode::BAD_REQUEST)),
         ),
-    }
+    }   
 }
 
 pub fn router(state: AppState) -> Router<AppState> {

@@ -20,4 +20,10 @@ export const shortlinkService = {
         );
         return response.data.data;
     },
+    list: async () => {
+        const response = await api.get<ApiResponse<ShortLink[]>>(
+            "/api/links"
+        );
+        return response.data.data;
+    }
 };

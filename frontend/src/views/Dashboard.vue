@@ -8,7 +8,12 @@ import TopPerformers from '@/features/dashboard/components/TopPerformers.vue';
 import Header from '@/components/Header.vue';
 
 import CreateLink from '@/features/dashboard/components/CreateLink.vue';
+import { shortlinkService } from '@/services/shortlinkService';
 
+const trying = async () => {
+    let links = await shortlinkService.list();
+    console.log(links);
+}
 
 </script>
 <template>
@@ -16,7 +21,7 @@ import CreateLink from '@/features/dashboard/components/CreateLink.vue';
     <main class="mx-10 lg:w-5xl lg:mx-auto">
 
         <h1 class="mb-6 text-3xl font-classic">Link Dashboard</h1>
-
+        <button @click="trying">try</button>
         <CreateLink />
         
         <ClicksDetailsRow />
